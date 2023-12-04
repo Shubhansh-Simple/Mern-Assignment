@@ -1,8 +1,18 @@
-/* HOMEPAGE */
+/* 
+ * HOMEPAGE Of Application
+ */
+import Header        from './components/Header';
+import Footer        from './components/Footer';
+import CandidateList from './screens/CandidateList';
 
 const App = () => {
   return (
-    <h1>First React App</h1>
+    <>
+      <Header />
+      <h1>First React Application</h1>
+      <CandidateList />
+      <Footer />
+    </>
   );
 }
 
