@@ -15,18 +15,29 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-// Local Files
 import reportWebVitals from './reportWebVitals';
+
+// Local Files
 import App             from './App';
 import CandidateList   from './screens/CandidateListScr';
+import CandidateUpdate from './screens/CandidateUpdateScr';
 
 
-/* Routers */
+/* Router - Mapping URL with Pages */
 const router = createBrowserRouter(
   createRoutesFromElements(
 
     <Route path='/' element={ <App /> }>
-      <Route index={true} path='/' element={ <CandidateList /> }/>
+
+      {/* Candidates List Page */}
+      <Route index={true} 
+             path='/' 
+             element={ <CandidateList /> }/>
+
+      {/* Candidate Update Page */}
+      <Route path='candidate/:id/update'     
+             element={ <CandidateUpdate /> }/>
+
     </Route>
   )
 );

@@ -1,10 +1,12 @@
 // React-bootstrap
-import Table  from 'react-bootstrap/Table';
-import Button from 'react-bootstrap/Button';
-import Card   from 'react-bootstrap/Card';
-import Image  from 'react-bootstrap/Image';
-
 import {Row, Col} from 'react-bootstrap';
+import Table      from 'react-bootstrap/Table';
+import Button     from 'react-bootstrap/Button';
+import Card       from 'react-bootstrap/Card';
+import Image      from 'react-bootstrap/Image';
+
+// React-Link
+import { Link }   from 'react-router-dom';
 
 // React-icons
 import { BsFillPencilFill } from 'react-icons/bs';
@@ -51,14 +53,13 @@ const Candidate = ({ candidate }) => {
       { /* Bootstrap Modal */}
       <Modal show={show} onHide={handleClose}>
 
-        {/* Modal-Header */}
+        {/* Dialog-Header */}
         <Modal.Header closeButton>
           <Modal.Title>{dialog}</Modal.Title>
         </Modal.Header>
 
-        {/* Modal-Footer */}
+        {/* Dialog-Footer */}
         <Modal.Footer>
-
           <Button variant='danger' onClick={handleClose}>
             Yes
           </Button>
@@ -73,7 +74,6 @@ const Candidate = ({ candidate }) => {
       <Card className='my-2 py-2 rounded bg-dark px-4'
             border='info'>
 
-        { /* First table (1/2) */ }
         <Row>
           <Col>
               { /* Avatar */ }
@@ -81,9 +81,12 @@ const Candidate = ({ candidate }) => {
                      className='img-fluid rounded-circle fluid mb-2'
                      alt='Profile Avatar'
                      style={{width: '90px', height: '110px'}}
-                     roundedCircle />
+                     roundedCircle 
+              />
           </Col>
+
           <Col>
+            { /* First table (1/2) */ }
             <Table variant='dark'>
               { /* Full name */ }
               <tr className='text-center bg-dark'>
@@ -148,7 +151,8 @@ const Candidate = ({ candidate }) => {
               <Card.Text as='small' >
                 <td>
                   <div className='form-switch form-check'>
-                    <label className='form-check-label' for='flexSwitchCheckChecked'>
+                    <label className='form-check-label' 
+                           for='flexSwitchCheckChecked'>
                       <strong className='text-info'> : Available</strong>
                     </label>
 
@@ -169,9 +173,11 @@ const Candidate = ({ candidate }) => {
         <Card.Footer style={{ display : 'flex' }}>
 
           { /* Update button */ }
-          <Button variant='primary' size='sm' >
-            <BsFillPencilFill /> Edit
-          </Button>
+          <Link to={`/candidate/${candidate._id}/update`} >
+            <Button variant='primary' size='sm' >
+              <BsFillPencilFill /> Edit
+            </Button>
+          </Link>
 
           { /* Delete button */ }
           <Button variant='danger' 
