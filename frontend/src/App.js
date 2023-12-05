@@ -1,16 +1,17 @@
 /* 
  * HOMEPAGE Of Application
  */
-import Header        from './components/Header';
-import Footer        from './components/Footer';
-import CandidateList from './screens/CandidateList';
+import { Outlet }    from 'react-router-dom';
+
+// Local Files
+import Header        from './components/HeaderComp';
+import Footer        from './components/FooterComp';
 
 const App = () => {
   return (
     <>
       <Header />
-      <h1>First React Application</h1>
-      <CandidateList />
+      <Outlet />
       <Footer />
     </>
   );

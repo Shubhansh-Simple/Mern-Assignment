@@ -12,15 +12,15 @@ const sampleData = [
    'domain':"Sales",
    'available':false
   },
-   
+
   {
    '_id':2,
-   'first_name':"Honoria",
-   'last_name':"Caughte",
-   'email':"hcaughte1@google.com.br",
+   'first_name':"Kalindi",
+   'last_name':"Vinson",
+   'email':"kvinson6@g.co",
    'gender':"Female",
-   'avatar':"https://robohash.org/temporibusporrolaboriosam.png?size=50x50&set=set1",
-   'domain':"Finance",
+   'avatar':"https://robohash.org/occaecatinihilquos.png?size=50x50&set=set1",
+   'domain':"Management",
    'available':true
   },
    
@@ -70,14 +70,15 @@ const sampleData = [
    
   {
    '_id':7,
-   'first_name':"Kalindi",
-   'last_name':"Vinson",
-   'email':"kvinson6@g.co",
+   'first_name':"Honoria",
+   'last_name':"Caughte",
+   'email':"hcaughte1@google.com.br",
    'gender':"Female",
-   'avatar':"https://robohash.org/occaecatinihilquos.png?size=50x50&set=set1",
-   'domain':"Management",
+   'avatar':"https://robohash.org/temporibusporrolaboriosam.png?size=50x50&set=set1",
+   'domain':"Finance",
    'available':true
   },
+   
 ]
 
 export default sampleData;
