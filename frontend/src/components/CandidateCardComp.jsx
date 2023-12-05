@@ -7,11 +7,11 @@ import Image  from 'react-bootstrap/Image';
 import {Row, Col} from 'react-bootstrap';
 
 // React-icons
-import { BsFillPencilFill } from "react-icons/bs";
-import { BsFillTrashFill }  from "react-icons/bs";
+import { BsFillPencilFill } from 'react-icons/bs';
+import { BsFillTrashFill }  from 'react-icons/bs';
 
 // React-hooks
-import { useState } from "react";
+import { useState } from 'react';
 import Modal        from 'react-bootstrap/Modal';
 
 // Local
@@ -22,9 +22,21 @@ import Modal        from 'react-bootstrap/Modal';
  */
 const Candidate = ({ candidate }) => {
 
+  /*
+   * Full Name
+   */
   const fullName = candidate.first_name 
                       + ' ' + 
                    candidate.last_name;
+
+  /* 
+   * Avaialability button color 
+   */
+  const btnColor = candidate.available 
+                      ? 
+                   'bg-primary' 
+                      : 
+                   'bg-dark'
 
 
   const dialog = 'Are you sure ?'
@@ -35,9 +47,7 @@ const Candidate = ({ candidate }) => {
   const handleShow      = ()=> setShow(true);
 
   return (
-
     <>
-
       { /* Bootstrap Modal */}
       <Modal show={show} onHide={handleClose}>
 
@@ -59,134 +69,122 @@ const Candidate = ({ candidate }) => {
 
       </Modal>
 
-    {/* CARD HEADER */}
-    <Card className='my-2 py-2 rounded bg-dark px-4'
-          border='info'>
+      {/* CARD HEADER */}
+      <Card className='my-2 py-2 rounded bg-dark px-4'
+            border='info'>
 
-      { /* First table (1/2) */ }
-      <Row>
-        <Col>
-            { /* Avatar */ }
-            <Image src={candidate.avatar}
-                   className='img-fluid rounded-circle fluid mb-2'
-                   alt='Profile Avatar'
-                   style={{width: '90px', height: '110px'}}
-                   roundedCircle />
-        </Col>
-        <Col>
-          <Table variant='dark'>
-            { /* Full name */ }
-            <tr className='text-center bg-dark'>
-              <td>
-                <Card.Text as='p'  
-                           style={{ fontSize : '20px'}}
-                           className='text-white'>
-                  <p>{fullName}</p>
-                </Card.Text>
-              </td>
-            </tr>
+        { /* First table (1/2) */ }
+        <Row>
+          <Col>
+              { /* Avatar */ }
+              <Image src={candidate.avatar}
+                     className='img-fluid rounded-circle fluid mb-2'
+                     alt='Profile Avatar'
+                     style={{width: '90px', height: '110px'}}
+                     roundedCircle />
+          </Col>
+          <Col>
+            <Table variant='dark'>
+              { /* Full name */ }
+              <tr className='text-center bg-dark'>
+                <td>
+                  <Card.Text as='p'  
+                             style={{ fontSize : '20px'}}
+                             className='text-white'>
+                    <p>{fullName}</p>
+                  </Card.Text>
+                </td>
+              </tr>
 
-            { /* Domain */ }
-            <tr className='text-center'>
-              <td>
-                <Card.Text as='strong' 
-                           className='text-warning'
-                           style={{ fontSize : '13px' }}>
-                  ({candidate.domain})
-                </Card.Text>
-              </td>
-            </tr>
-          </Table>
-        </Col>
-      </Row>
+              { /* Domain */ }
+              <tr className='text-center'>
+                <td>
+                  <Card.Text as='strong' 
+                             className='text-warning'
+                             style={{ fontSize : '13px' }}>
+                    ({candidate.domain})
+                  </Card.Text>
+                </td>
+              </tr>
+            </Table>
+          </Col>
+        </Row>
       
 
-      { /* CARD BODY */ }
-      <Card.Body className='text-light'>
-        
-        { /* Second Table (2/2) */ }
-        <Table  variant='dark' style={{ fontSize:'15px' }}>
-        
-          { /* Email */ }
-          <tr>
+        { /* CARD BODY */ }
+        <Card.Body className='text-light'>
+          
+          { /* Second Table (2/2) */ }
+          <Table  variant='dark' style={{ fontSize:'15px' }}>
+          
+            { /* Email */ }
+            <tr>
+              <Card.Text as='small'>
+                <td>
+                  <Row>
+                    <Col>
+                      <strong className='text-warning'>Email : </strong>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <strong>{candidate.email}</strong>
+                    </Col>
+                  </Row>
+                </td>
+              </Card.Text>
+            </tr>
+
+            { /* Gender */ }
+            <tr>
             <Card.Text as='small'>
-              <td>
-                <Row>
-                  <Col>
-                    <strong className='text-warning'>Email : </strong>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <strong>{candidate.email}</strong>
-                  </Col>
-                </Row>
-              </td>
+              <td><strong className='text-warning'>Gender : </strong></td>
+              <td>{candidate.gender}</td>
             </Card.Text>
-          </tr>
+            </tr>
 
-          { /* Gender */ }
-          <tr>
-          <Card.Text as='small'>
-            <td><strong className='text-warning'>Gender : </strong></td>
-            <td>{candidate.gender}</td>
-          </Card.Text>
-          </tr>
+            { /* Avaialability */ }
+            <tr>
+              <Card.Text as='small' >
+                <td>
+                  <div className='form-switch form-check'>
+                    <label className='form-check-label' for='flexSwitchCheckChecked'>
+                      <strong className='text-info'> : Available</strong>
+                    </label>
 
-          { /* Avaialability */ }
-          <tr>
-            <Card.Text as='small' >
-              <td>
-                <div className="form-switch form-check">
-                  <label className="form-check-label" for="flexSwitchCheckChecked">
-                    <strong className='text-warning'> : Available</strong>
-                  </label>
-                  {
-                    candidate.available 
-                      ?
-                  <input className="form-check-input bg-primary"  
-                         type="checkbox" 
-                         id="flexSwitchCheckChecked" 
-                         checked 
-                  />
-                    :
-                  <input className="form-check-input bg-dark"  
-                         type="checkbox" 
-                         id="flexSwitchCheckChecked" 
-                         disabled
-                         checked 
-                  />
-                  }
-                </div>
-              </td>
-            </Card.Text>
-          </tr>
+                    <input className={`form-check-input ${btnColor}`}
+                           type='checkbox' 
+                           id='flexSwitchCheckChecked' 
+                           checked 
+                    />
+                  </div>
+                </td>
+              </Card.Text>
+            </tr>
 
-        </Table>
-      </Card.Body>
+          </Table>
+        </Card.Body>
 
-      { /* CARD FOOTER */ }
-      <Card.Footer style={{ display : 'flex' }}>
+        { /* CARD FOOTER */ }
+        <Card.Footer style={{ display : 'flex' }}>
 
-        { /* Update button */ }
-        <Button variant='primary' size='sm' >
-          <BsFillPencilFill /> Edit
-        </Button>
+          { /* Update button */ }
+          <Button variant='primary' size='sm' >
+            <BsFillPencilFill /> Edit
+          </Button>
 
-        { /* Delete button */ }
-        <Button variant='danger' 
-                size='sm' 
-                onClick={handleShow}
-                style={{ marginLeft: 'auto' }} >
-          <BsFillTrashFill /> Danger
-        </Button>
+          { /* Delete button */ }
+          <Button variant='danger' 
+                  size='sm' 
+                  onClick={handleShow}
+                  style={{ marginLeft: 'auto' }} >
+            <BsFillTrashFill /> Danger
+          </Button>
 
-      </Card.Footer>
+        </Card.Footer>
 
-    </Card>
+      </Card>
     </>
-
-
   )
 }
 

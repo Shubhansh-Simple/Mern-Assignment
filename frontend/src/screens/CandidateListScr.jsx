@@ -17,7 +17,7 @@ const CandidateList = () => {
     <Container>
       <h1 className='text-danger'>Candidate List</h1>
 
-      {/* If data exist */}
+      {/* data exist */}
       <Row>
         {
           /* Iterating Data */
@@ -29,15 +29,13 @@ const CandidateList = () => {
         }
       </Row>
 
-      {/* If data doesn't exist */}
+      {/* data doesn't exist */}
       { 
         sampleData.length < 1
-          ?
+          &&
         <h1 className='display-1 text-center py-5'>
           Oops,No Candidate Found!
         </h1>
-          :
-        <></>
       }
     </Container>
   );
