@@ -19,8 +19,8 @@ import reportWebVitals from './reportWebVitals';
 
 // Local Files
 import App             from './App';
-import CandidateList   from './screens/CandidateListScr';
-import CandidateUpdate from './screens/CandidateUpdateScr';
+import CandidateList   from './screens/CandidateList';
+import CandidateUpdate from './screens/CandidateUpdate';
 
 
 /* Router - Mapping URL with Pages */

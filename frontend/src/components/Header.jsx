@@ -1,12 +1,13 @@
-import Dropdown from 'react-bootstrap/Dropdown';
-
-import { Row, Col } from 'react-bootstrap';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-//import { LinkContainer }          from 'react-router-bootstrap'; 
 //import { FaShoppingCart }         from 'react-icons/fa';
 
+// React-bootstrap
+import { Row, Col }               from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import Dropdown                   from 'react-bootstrap/Dropdown';
+import { LinkContainer }          from 'react-router-bootstrap'; 
+
 /*
- * Header and Navbar of the HomeScreen
+ * Header of the HomeScreen
  */
 const Header = () => {
   return (
@@ -14,8 +15,10 @@ const Header = () => {
       <Navbar bg="dark" variant="dark" expand="sm" collapseOnSelect>
         <Container>
 
-          {/* Dynamic Page Title */}
-          <Navbar.Brand>Candidates List</Navbar.Brand>
+          {/* Header Title Of App */}
+          <LinkContainer to='/'>
+            <Navbar.Brand>Candidates List</Navbar.Brand>
+          </LinkContainer>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
 

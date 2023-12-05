@@ -2,7 +2,7 @@
 import { Row, Col, Container } from 'react-bootstrap';
 
 // Components
-import CandidateCard from '../components/CandidateCardComp';
+import CandidateCard from '../components/CandidateCard';
 
 // Local Data
 import sampleData from '../sampleData';

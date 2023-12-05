@@ -14,7 +14,7 @@ const Footer = () => {
         <Row>
           <Col>
             <br />
-            <p className='text-center bg-dark text-white'>
+            <p className='text-center bg-dark text-light'>
               <small className='text-secondary'>
                 &copy; {currentYear} Copyright:  
               </small> shubhansh7777@gmail.com
