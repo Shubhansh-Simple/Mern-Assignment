@@ -1,9 +1,10 @@
-// React-Bootstrap
-import { Form,Button } from 'react-bootstrap';
+// React-Link
 import { useParams }   from 'react-router-dom';
 
 // Local
-import sampleData from '../sampleData';
+import CandidateUpdateForm from '../components/CandidateUpdateForm';
+import ErrorMsg            from '../helper/shortcuts';
+import sampleData          from '../sampleData';
 
 /*
  * Candidate Update Page
@@ -11,29 +12,25 @@ import sampleData from '../sampleData';
 const CandidateUpdate = ()=> {
 
   // Get id from url
-  const candidateId = parseInt( useParams().id );
+  const candidateId   = parseInt( useParams().id );
 
   // Get candidate from the database using the id
-  const candidate     =  sampleData.find( ( eachCandidate ) => eachCandidate._id===candidateId );
+  const candidate     =  sampleData.find( (eachCandidate) => eachCandidate._id===candidateId );
 
   const notFoundMsg   = "Candidate doesn't exist"
 
-    //const fullName  = candidate.first_name + ' ' + candidate.last_name;
+  if ( candidate ){
+    candidate['form_type'] = 'Update';
+  }
 
   return (
     <>
       {
         candidate
           ?
-        <h1 className='text-danger display-1 text-center'>
-          <strong>
-            {candidate.first_name} { candidate.last_name }
-          </strong>
-        </h1>
+        <CandidateUpdateForm candidate={candidate} />
           :
-        <h1 className='text-danger text-center display-1'>
-          {notFoundMsg}
-        </h1>
+        <ErrorMsg msg={notFoundMsg} />
       }
     </>
   );

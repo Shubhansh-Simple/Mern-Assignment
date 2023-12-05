@@ -5,7 +5,8 @@ import { Row, Col, Container } from 'react-bootstrap';
 import CandidateCard from '../components/CandidateCardComp';
 
 // Local Data
-import sampleData from "../sampleData";
+import sampleData from '../sampleData';
+import ErrorMsg   from '../helper/shortcuts';
 
 /*
  * Show Candidates List
@@ -13,16 +14,22 @@ import sampleData from "../sampleData";
  */
 const CandidateList = () => {
 
+  const notFoundMsg   = 'Oops, No candidate found!'
+
   return(
     <Container>
-      <h1 className='text-danger'>Candidate List</h1>
+      <br />
+      <br />
 
       {/* data exist */}
       <Row>
         {
           /* Iterating Data */
           sampleData.map( (data) => (
-            <Col sm={12} md={6} lg={4} xl={3}>
+            <Col sm={12} 
+                 md={6} 
+                 lg={4} 
+                 xl={3}>
               <CandidateCard candidate={data}/>
             </Col>
           ))
@@ -33,9 +40,7 @@ const CandidateList = () => {
       { 
         sampleData.length < 1
           &&
-        <h1 className='display-1 text-center py-5'>
-          Oops,No Candidate Found!
-        </h1>
+        <ErrorMsg msg={notFoundMsg} />
       }
     </Container>
   );
