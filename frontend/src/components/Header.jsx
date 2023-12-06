@@ -1,10 +1,20 @@
 //import { FaShoppingCart }         from 'react-icons/fa';
 
 // React-bootstrap
-import { Row, Col }               from 'react-bootstrap';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import Dropdown                   from 'react-bootstrap/Dropdown';
-import { LinkContainer }          from 'react-router-bootstrap'; 
+import { 
+  // Row, 
+  // Col, 
+         Button,
+         Navbar,
+         Nav,
+         Container }     from 'react-bootstrap';
+
+// Router
+import { LinkContainer } from 'react-router-bootstrap'; 
+
+// Icons
+//import { IconContext } from "react-icons";
+import { ImUserPlus } from "react-icons/im";
 
 /*
  * Header of the HomeScreen
@@ -12,74 +22,33 @@ import { LinkContainer }          from 'react-router-bootstrap';
 const Header = () => {
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="sm" collapseOnSelect>
+      <Navbar bg='dark' variant='dark'>
         <Container>
 
-          {/* Header Title Of App */}
-          <LinkContainer to='/'>
-            <Navbar.Brand>Candidates List</Navbar.Brand>
-          </LinkContainer>
+          {/* LINK - Candidate List Page */}
+          <Nav className='justify-content-left'>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
+            <LinkContainer to='/'>
+              <Navbar.Brand>
+                <strong>Candidate List</strong>
+              </Navbar.Brand>
+            </LinkContainer>
+          </Nav>
 
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+          {/* LINK - Create Candidate Page */}
+          <Nav className='justify-content-right'>
 
-                {/* Filter Buttons - Domain,Gender,Availability */}
-                <Nav.Link>
+            <LinkContainer to='/candidate'>
+              <Nav.Item>
+                <Button variant='danger'>
+                    <ImUserPlus />
+                    &nbsp;
+                    Add Candidate
+                </Button>
+              </Nav.Item>
+            </LinkContainer>
+          </Nav>
 
-                  <Row>
-                    {/* Domain */}
-                    <Col>
-                      <Dropdown>
-                        <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                          Domain
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">Sales</Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">Manager</Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">I.T.</Dropdown.Item>
-                          <Dropdown.Item href="#/action-4">Finance</Dropdown.Item>
-                          <Dropdown.Item href="#/action-5">Marketting</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </Col>
-
-                    {/* Gender */}
-                    <Col>
-                      <Dropdown>
-                        <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                          Gender
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">Male</Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">Female</Dropdown.Item>
-                          <Dropdown.Item href="#/action-3">Others</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </Col>
-
-                    {/* Availability */}
-                    <Col>
-                      <Dropdown>
-                        <Dropdown.Toggle variant="dark" id="dropdown-basic">
-                          All
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                          <Dropdown.Item href="#/action-1">Active</Dropdown.Item>
-                          <Dropdown.Item href="#/action-2">Non Active</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown>
-                    </Col>
-                  </Row>
-
-                </Nav.Link>
-
-            </Nav>
-          </Navbar.Collapse>
 
         </Container>
       </Navbar>
