@@ -2,7 +2,7 @@
 import { useParams }   from 'react-router-dom';
 
 // Local
-import CandidateUpdateForm from '../components/CandidateUpdateForm';
+import CandidateForm from '../components/CandidateForm';
 import ErrorMsg            from '../helper/shortcuts';
 import sampleData          from '../sampleData';
 
@@ -14,13 +14,17 @@ const CandidateUpdate = ()=> {
   // Get id from url
   const candidateId   = parseInt( useParams().id );
 
-  // Get candidate from the database using the id
+  // Get candidate from the database using id
   const candidate     =  sampleData.find( (eachCandidate) => eachCandidate._id===candidateId );
 
+  // Error message for user doesn't exist
   const notFoundMsg   = "Candidate doesn't exist"
 
-  if ( candidate ){
-    candidate['form_type'] = 'Update';
+  /* For Update Form */
+  const form = {
+    'title'         :  `${candidate.first_name}'s Update Form`,
+    'titleColor'    : 'text-secondary',
+    'submitBtnText' : 'Update'
   }
 
   return (
@@ -28,7 +32,7 @@ const CandidateUpdate = ()=> {
       {
         candidate
           ?
-        <CandidateUpdateForm candidate={candidate} />
+        <CandidateForm candidate={candidate} form={form} />
           :
         <ErrorMsg msg={notFoundMsg} />
       }

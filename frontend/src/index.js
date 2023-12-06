@@ -21,18 +21,27 @@ import reportWebVitals from './reportWebVitals';
 import App             from './App';
 import CandidateList   from './screens/CandidateList';
 import CandidateUpdate from './screens/CandidateUpdate';
+import CandidateCreate from './screens/CandidateCreate';
 
 
-/* Router - Mapping URL with Pages */
+/* 
+ * Consist all routes of our application
+ * Router - Mapping URL with Pages 
+ */
 const router = createBrowserRouter(
   createRoutesFromElements(
 
+    // Parent is App.js
     <Route path='/' element={ <App /> }>
 
       {/* Candidates List Page */}
       <Route index={true} 
              path='/' 
              element={ <CandidateList /> }/>
+
+      {/* Candidate Create Page */}
+      <Route path='candidate'     
+             element={ <CandidateCreate /> }/>
 
       {/* Candidate Update Page */}
       <Route path='candidate/:id/update'     
