@@ -26,6 +26,9 @@ const CandidateForm = ( {candidate, form } ) => {
   let last_name_val  = '';
   let email_val      = '';
   let available_val  = '';
+  let gender_val     = '';
+  let avatar_val     = '';
+  let domain_val     = '';
 
   /* Values For Update Form */
   if ( candidateExist ){
