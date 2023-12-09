@@ -21,14 +21,18 @@ const CandidateForm = ( {candidate, form } ) => {
   const candidateExist = Object.keys(candidate).length > 0
   console.log('Candidate Exist - ',candidateExist);
 
+  /* Default Values For Create Form */
   let first_name_val = '';
   let last_name_val  = '';
   let email_val      = '';
+  let available_val  = '';
 
+  /* Values For Update Form */
   if ( candidateExist ){
     first_name_val = candidate.first_name;
     last_name_val  = candidate.last_name;
     email_val      = candidate.email;
+    available_val  = candidate.available ? 'checked' : '' ;
   }
 
 
@@ -135,6 +139,7 @@ const CandidateForm = ( {candidate, form } ) => {
             type='switch'
             id='custom-switch'
             label='Available'
+            checked={available_val}
             className='col-form-label-lg'
           />
         </Form.Group>
