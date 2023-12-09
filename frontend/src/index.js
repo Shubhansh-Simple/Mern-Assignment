@@ -1,3 +1,8 @@
+/*
+ * It's the router mapping file
+ * like urls.py in django
+ */
+
 // React
 import React    from 'react';
 import ReactDOM from 'react-dom/client';
@@ -22,6 +27,7 @@ import App             from './App';
 import CandidateList   from './screens/CandidateList';
 import CandidateUpdate from './screens/CandidateUpdate';
 import CandidateCreate from './screens/CandidateCreate';
+import Practice         from './practice';
 
 
 /* 
@@ -32,7 +38,12 @@ const router = createBrowserRouter(
   createRoutesFromElements(
 
     // Parent is App.js
-    <Route path='/' element={ <App /> }>
+    <Route path='/' 
+          element={ <App /> }>
+
+      {/* For practicing the react */}
+      <Route path='practice'
+             element={ <Practice /> } />
 
       {/* Candidates List Page */}
       <Route index={true} 

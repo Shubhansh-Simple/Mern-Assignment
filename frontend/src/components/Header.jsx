@@ -1,4 +1,4 @@
-//import { FaShoppingCart }         from 'react-icons/fa';
+import { FaHouse }         from 'react-icons/fa6';
 
 // React-bootstrap
 import { 
@@ -30,10 +30,23 @@ const Header = () => {
 
             <LinkContainer to='/'>
               <Navbar.Brand>
-                <strong>Candidate List</strong>
+                <FaHouse /> 
+                &nbsp;
+                <strong>Home</strong>
               </Navbar.Brand>
             </LinkContainer>
           </Nav>
+
+          {/* LINK - Go to practice page */}
+          <Nav className='justify-content-left'>
+
+            <LinkContainer to='practice'>
+              <Navbar.Brand>
+                <strong className='text-white'>Practice</strong>
+              </Navbar.Brand>
+            </LinkContainer>
+          </Nav>
+
 
           {/* LINK - Create Candidate Page */}
           <Nav className='justify-content-right'>
