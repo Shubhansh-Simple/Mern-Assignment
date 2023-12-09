@@ -67,111 +67,95 @@ const Candidate = ({ candidate }) => {
 
       </Modal>
 
-      {/* CARD HEADER */}
+      {/* CARD */}
       <Card className='my-2 py-2 rounded bg-dark px-4'
             border='info'>
 
-        <Row>
-          <Col>
-              { /* Avatar */ }
-              <Image src={candidate.avatar}
-                     className='img-fluid rounded-circle fluid mb-2'
-                     alt='Profile Avatar'
-                     style={{width: '90px', height: '110px'}}
-                     roundedCircle 
-              />
-          </Col>
+        {/* CARD HEADER */}
+        <div className='text-center'>
+            { /* Full name */ }
+            <Card.Text as='h3'  
+                       className='text-white'>
+              <strong>{fullName}</strong>
+            </Card.Text>
 
-          <Col>
-            { /* First table (1/2) */ }
-            <Table variant='dark'>
-              { /* Full name */ }
-              <tr className='text-center bg-dark'>
-                <td>
-                  <Card.Text as='p'  
-                             style={{ fontSize : '20px'}}
-                             className='text-white'>
-                    <p>{fullName}</p>
-                  </Card.Text>
-                </td>
-              </tr>
+            { /* Domain */ }
+            <Card.Text as='strong' 
+                       className='text-warning'
+                       style={{ fontSize : '13px' }}>
+              ({candidate.domain})
+            </Card.Text>
+         </div>
 
-              { /* Domain */ }
-              <tr className='text-center'>
-                <td>
-                  <Card.Text as='strong' 
-                             className='text-warning'
-                             style={{ fontSize : '13px' }}>
-                    ({candidate.domain})
-                  </Card.Text>
-                </td>
-              </tr>
-            </Table>
-          </Col>
-        </Row>
-      
-
+        <hr className='text-white' />
         { /* CARD BODY */ }
         <Card.Body className='text-light'>
-          
-          { /* Second Table (2/2) */ }
-          <Table  variant='dark' style={{ fontSize:'15px' }}>
-          
-            { /* Email */ }
-            <tr>
-              <Card.Text as='small'>
-                <td>
-                  <Row>
-                    <Col>
-                      <strong className='text-warning'>Email : </strong>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
-                      <strong>{candidate.email}</strong>
-                    </Col>
-                  </Row>
-                </td>
-              </Card.Text>
-            </tr>
 
-            { /* Gender */ }
-            <tr>
-            <Card.Text as='small'>
-              <td><strong className='text-warning'>Gender :</strong></td>
-              <td>{genderName}</td>
-            </Card.Text>
-            </tr>
+          <Row>
+            <Col>
+                { /* Avatar */ }
+                <Image src={candidate.avatar}
+                       className='img-fluid rounded-circle fluid'
+                       alt='Profile Avatar'
+                       style={{width: '90px', height: '130px'}}
+                       roundedCircle 
+                />
+            </Col>
 
-            { /* Avaialability */ }
-            <tr>
-              <Card.Text as='small' >
-                <td>
-                  <div className='form-switch form-check'>
-                    <label className='form-check-label' 
-                           for='flexSwitchCheckChecked'>
-                      <strong className='text-info'> : Available</strong>
-                    </label>
+            <Col>
+              { /* Table */ }
+              <Table borderless variant='dark' style={{ fontSize:'15px' }}>
 
-                    <input className={`form-check-input ${btnColor}`}
-                           type='checkbox' 
-                           id='flexSwitchCheckChecked' 
-                           checked 
-                    />
-                  </div>
-                </td>
-              </Card.Text>
-            </tr>
+                <br/>
+              
+                { /* Gender */ }
+                <tr>
+                <Card.Text as='strong'>
+                  <td><strong className='text-warning'>Gender</strong></td>
+                  <td>{genderName}</td>
+                </Card.Text>
+                </tr>
 
-          </Table>
+                { /* Avaialability */ }
+                <tr>
+                  <Card.Text as='small' >
+                    <td>
+                      <div className='form-switch form-check'>
+                        <label className='form-check-label' 
+                               for='flexSwitchCheckChecked'>
+                          <strong className='text-info'> : Available</strong>
+                        </label>
+
+                        <input className={`form-check-input ${btnColor}`}
+                               type='checkbox' 
+                               id='flexSwitchCheckChecked' 
+                               checked 
+                        />
+                      </div>
+                    </td>
+                  </Card.Text>
+                </tr>
+
+              </Table>
+            </Col>
+          </Row>
+
+          <div className='text-center'>
+            <small className='text-warning'>Mail ID</small>
+            <br />
+            <strong>{candidate.email}</strong>
+          </div>
+
         </Card.Body>
+
 
         { /* CARD FOOTER */ }
         <Card.Footer style={{ display : 'flex' }}>
 
           { /* Update button */ }
           <Link to={`/candidate/${candidate._id}/update`} >
-            <Button variant='primary' size='sm' >
+            <Button variant='primary' 
+                    size='sm' >
               <BsFillPencilFill /> Edit
             </Button>
           </Link>
