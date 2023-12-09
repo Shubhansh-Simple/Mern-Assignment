@@ -24,7 +24,7 @@ import reportWebVitals from './reportWebVitals';
 
 // Local Files
 import App             from './App';
-import CandidateList   from './screens/CandidateList';
+import HomeScreen   from './screens/HomeScreen';
 import CandidateUpdate from './screens/CandidateUpdate';
 import CandidateCreate from './screens/CandidateCreate';
 import Practice         from './practice';
@@ -45,10 +45,10 @@ const router = createBrowserRouter(
       <Route path='practice'
              element={ <Practice /> } />
 
-      {/* Candidates List Page */}
+      {/* HomeScreen Page */}
       <Route index={true} 
              path='/' 
-             element={ <CandidateList /> }/>
+             element={ <HomeScreen /> }/>
 
       {/* Candidate Create Page */}
       <Route path='candidate'     

@@ -25,7 +25,7 @@ const Header = () => {
       <Navbar bg='dark' variant='dark'>
         <Container>
 
-          {/* LINK - Candidate List Page */}
+          {/* LINK - HomeScreen Page */}
           <Nav className='justify-content-left'>
 
             <LinkContainer to='/'>

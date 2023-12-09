@@ -1,3 +1,8 @@
+/*
+ * HomeScreen of the application
+ * ( Candidate List )
+ */
+
 // Bootstrap
 import { Row, Col, Container } from 'react-bootstrap';
 
@@ -12,7 +17,7 @@ import ErrorMsg   from '../helper/shortcuts';
  * Show Candidates List
  * by reading data from database
  */
-const CandidateList = () => {
+const HomeScreen = () => {
 
   const notFoundMsg   = 'Oops, No candidate found!'
 
@@ -46,4 +51,4 @@ const CandidateList = () => {
   );
 };
 
-export default CandidateList;
+export default HomeScreen;
