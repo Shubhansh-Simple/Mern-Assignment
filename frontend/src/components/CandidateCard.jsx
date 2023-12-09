@@ -17,23 +17,20 @@ import { useState } from 'react';
 import Modal        from 'react-bootstrap/Modal';
 
 // Local
-//import DialogPopup from './DialogPopupComp';
+import { GenderDropDownValue } from '../helper/shortcuts';
 
 /*
  * Each candidate UI-CARD component
  */
 const Candidate = ({ candidate }) => {
 
-  /*
-   * Full Name
-   */
-  const fullName = candidate.first_name 
-                      + ' ' + 
-                   candidate.last_name;
+  /* Full Name */
+  const fullName     = candidate.first_name + ' ' + candidate.last_name;
 
-  /* 
-   * Avaialability button color 
-   */
+  /* Gender Name */
+  const genderName   = GenderDropDownValue( candidate.gender );
+
+  /* Avaialable button color */
   const btnColor = candidate.available 
                       ? 
                    'bg-primary' 
@@ -141,8 +138,8 @@ const Candidate = ({ candidate }) => {
             { /* Gender */ }
             <tr>
             <Card.Text as='small'>
-              <td><strong className='text-warning'>Gender : </strong></td>
-              <td>{candidate.gender}</td>
+              <td><strong className='text-warning'>Gender :</strong></td>
+              <td>{genderName}</td>
             </Card.Text>
             </tr>
 

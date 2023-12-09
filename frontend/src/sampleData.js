@@ -7,7 +7,7 @@ const sampleData = [
    'first_name':"Anet",
    'last_name':"Doe",
    'email':"adoe0@comcast.net",
-   'gender':"2",
+   'gender': 2,
    'avatar':"https://robohash.org/sintessequaerat.png?size=50x50&set=set1",
    'domain':"Sales",
    'available':false
@@ -18,7 +18,7 @@ const sampleData = [
    'first_name':"Kalindi",
    'last_name':"Vinson",
    'email':"kvinson6@g.co",
-   'gender':"2",
+   'gender': 2,
    'avatar':"https://robohash.org/occaecatinihilquos.png?size=50x50&set=set1",
    'domain':"Management",
    'available':true
@@ -29,7 +29,7 @@ const sampleData = [
    'first_name':"Wiley",
    'last_name':"Boarder",
    'email':"wboarder2@xing.com",
-   'gender':"1",
+   'gender': 1,
    'avatar':"https://robohash.org/laboriosamdolorepossimus.png?size=50x50&set=set1",
    'domain':"Marketing",
    'available':false
@@ -40,7 +40,7 @@ const sampleData = [
    'first_name':"Brett",
    'last_name':"Ivetts",
    'email':"bivetts3@netlog.com",
-   'gender':"3",
+   'gender': 3,
    'avatar':"https://robohash.org/ullamsuntet.png?size=50x50&set=set1",
    'domain':"Finance",
    'available':true
@@ -51,7 +51,7 @@ const sampleData = [
    'first_name':"Horst",
    'last_name':"Grastye",
    'email':"hgrastye4@dmoz.org",
-   'gender':"1",
+   'gender': 1,
    'avatar':"https://robohash.org/utquirepudiandae.png?size=50x50&set=set1",
    'domain':"Finance",
    'available':false
@@ -62,7 +62,7 @@ const sampleData = [
    'first_name':"Monique",
    'last_name':"Wilbud",
    'email':"mwilbud5@state.gov",
-   'gender':"2",
+   'gender': 2,
    'avatar':"https://robohash.org/maximequiomnis.png?size=50x50&set=set1",
    'domain':"IT",
    'available':true
@@ -73,7 +73,7 @@ const sampleData = [
    'first_name':"Honoria",
    'last_name':"Caughte",
    'email':"hcaughte1@google.com.br",
-   'gender':"2",
+   'gender': 2,
    'avatar':"https://robohash.org/temporibusporrolaboriosam.png?size=50x50&set=set1",
    'domain':"Finance",
    'available':true

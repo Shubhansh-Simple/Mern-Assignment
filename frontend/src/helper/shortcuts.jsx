@@ -1,4 +1,22 @@
 /*
+ * Write custom helper function and components 
+ * for other modules
+ */
+
+
+/*
+ * Return associated gender name for gender database value
+ */
+export const GenderDropDownValue = ( gender ) => {
+  if ( gender === 1 )
+    return 'Male';
+  else if ( gender === 2 )
+    return 'Female';
+  else
+    return 'Others'
+}
+
+/*
  * Ooops message, not found
  */
 const ErrorMsg = ({msg}) => {
@@ -10,6 +28,9 @@ const ErrorMsg = ({msg}) => {
   );
 }
 
-export default ErrorMsg;
+export default ErrorMsg ;
+
+
+
 
 
