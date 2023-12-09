@@ -14,6 +14,7 @@ const CandidateCreate = () => {
   }
 
   return (
+    /* Empty candidate props leads to CreateForm */
     <CandidateForm candidate={{}} form={form} />
   );
 }

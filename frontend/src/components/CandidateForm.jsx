@@ -18,7 +18,19 @@ const CandidateForm = ( {candidate, form } ) => {
    * Leads us to PUT request
    * otherwise to POST request
    */
-  // const candidateExist = Object.keys(candidate).length > 0
+  const candidateExist = Object.keys(candidate).length > 0
+  console.log('Candidate Exist - ',candidateExist);
+
+  let first_name_val = '';
+  let last_name_val  = '';
+  let email_val      = '';
+
+  if ( candidateExist ){
+    first_name_val = candidate.first_name;
+    last_name_val  = candidate.last_name;
+    email_val      = candidate.email;
+  }
+
 
   return (
 
@@ -43,7 +55,9 @@ const CandidateForm = ( {candidate, form } ) => {
           <Col>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
               <Form.Label><b>First Name</b></Form.Label>
-              <Form.Control type='text' placeholder='Your First Name' />
+              <Form.Control type='text' 
+                            placeholder='Your First Name' 
+                            value={first_name_val} />
             </Form.Group>
           </Col>
 
@@ -52,7 +66,9 @@ const CandidateForm = ( {candidate, form } ) => {
           <Col>
             <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
               <Form.Label><b>Last Name</b></Form.Label>
-              <Form.Control type='text' placeholder='Your Last Name' />
+              <Form.Control type='text' 
+                            placeholder='Your Last Name'
+                            value={last_name_val} />
             </Form.Group>
           </Col>
         </Row>
@@ -61,7 +77,9 @@ const CandidateForm = ( {candidate, form } ) => {
         {/* Email Input */}
         <Form.Group className='mb-3' controlId='exampleForm.ControlInput1'>
           <Form.Label><b>Email</b></Form.Label>
-          <Form.Control type='email' placeholder='name@example.com' />
+          <Form.Control type='email' 
+                        placeholder='name@example.com'
+                        value={email_val} />
         </Form.Group>
 
 
